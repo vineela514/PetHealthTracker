@@ -1,0 +1,35 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px;
+}
+.pet-summary-card {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(25,118,210,0.08);
+}
+.appointments-card {
+  background: #fffde7;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(255,213,79,0.08);
+}
+.medication-card {
+  background: #e8f5e9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(56,142,60,0.08);
+}
+h2, h3 {
+  margin-top: 0;
+}
+ul {
+  padding-left: 20px;
+}

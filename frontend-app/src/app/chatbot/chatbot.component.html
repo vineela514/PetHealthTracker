@@ -1,0 +1,12 @@
+<div class="chatbot-container">
+  <div class="messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <strong>{{msg.sender}}:</strong> {{msg.text}}
+    </div>
+    <div *ngIf="loading" class="loading">Bot is typing...</div>
+  </div>
+  <div class="input-area">
+    <input [(ngModel)]="userInput" placeholder="Ask about your pet's health..." />
+    <button (click)="sendMessage()" [disabled]="loading">Send</button>
+  </div>
+</div>

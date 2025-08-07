@@ -1,0 +1,35 @@
+<div class="profile-container">
+  <h2>Pet Profile</h2>
+  <form (ngSubmit)="saveProfile()">
+    <label>Name: <input [(ngModel)]="pet.name" name="name" required /></label>
+    <label>Breed: <input [(ngModel)]="pet.breed" name="breed" required /></label>
+    <label>Age: <input type="number" [(ngModel)]="pet.age" name="age" required /></label>
+    <label>Weight: <input type="number" [(ngModel)]="pet.weight" name="weight" /></label>
+
+    <h3>Medical History</h3>
+    <div *ngFor="let history of pet.medicalHistory">
+      <p>{{history.visitDate}} - {{history.diagnosis}} ({{history.treatment}})</p>
+    </div>
+    <label>Visit Date: <input type="date" [(ngModel)]="newHistory.visitDate" name="visitDate" /></label>
+    <label>Diagnosis: <input [(ngModel)]="newHistory.diagnosis" name="diagnosis" /></label>
+    <label>Treatment: <input [(ngModel)]="newHistory.treatment" name="treatment" /></label>
+    <button type="button" (click)="addMedicalHistory()">Add Medical History</button>
+
+    <h3>Diet & Nutrition</h3>
+    <label>Schedule: <input [(ngModel)]="pet.diet.schedule" name="schedule" /></label>
+    <label>Food Brand: <input [(ngModel)]="pet.diet.foodBrand" name="foodBrand" /></label>
+    <label>Portion Size: <input [(ngModel)]="pet.diet.portionSize" name="portionSize" /></label>
+
+    <h3>Medications</h3>
+    <div *ngFor="let med of pet.medications">
+      <p>{{med.name}} - {{med.dosage}} | Next Dose: {{med.nextDose}} <span *ngIf="med.refillDue">| Refill Due: {{med.refillDue}}</span></p>
+    </div>
+    <label>Name: <input [(ngModel)]="newMedication.name" name="medName" /></label>
+    <label>Dosage: <input [(ngModel)]="newMedication.dosage" name="dosage" /></label>
+    <label>Next Dose: <input type="date" [(ngModel)]="newMedication.nextDose" name="nextDose" /></label>
+    <label>Refill Due: <input type="date" [(ngModel)]="newMedication.refillDue" name="refillDue" /></label>
+    <button type="button" (click)="addMedication()">Add Medication</button>
+
+    <button type="submit">Save Profile</button>
+  </form>
+</div>

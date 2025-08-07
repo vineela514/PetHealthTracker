@@ -1,0 +1,27 @@
+<div class="dashboard-container">
+  <div class="pet-summary-card">
+    <h2>{{pet.name}}</h2>
+    <p>Breed: {{pet.breed}}</p>
+    <p>Age: {{pet.age}} years</p>
+    <p>Weight: {{pet.weight}} kg</p>
+  </div>
+
+  <div class="appointments-card">
+    <h3>Upcoming Appointments</h3>
+    <ul>
+      <li *ngFor="let appt of appointments">
+        <strong>{{appt.type}}</strong> - {{appt.date}} <span *ngIf="appt.notes">({{appt.notes}})</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="medication-card">
+    <h3>Medication Reminders</h3>
+    <ul>
+      <li *ngFor="let med of medicationReminders">
+        <strong>{{med.medication}}</strong>: Next Dose - {{med.nextDose}}
+        <span *ngIf="med.refillDue"> | Refill Due: {{med.refillDue}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
